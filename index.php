@@ -396,6 +396,27 @@ if(!isset($_SESSION['admin'])){
 							<label for="image">Image Upload</label>
 							<input type="file" name="image" class="form-control-file">
 						</div>
+						
+<!-- 					<div class="form-group">
+						<label for="field-1" class="col-sm-3 control-label">Photo</label>
+
+						<div class="col-sm-5">
+							<div class="fileinput fileinput-new" data-provides="fileinput">
+								<div class="fileinput-new thumbnail" style="width: 100px; height: 100px;" data-trigger="fileinput">
+									<img src="http://placehold.it/200x200" alt="...">
+								</div>
+								<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>
+								<div>
+									<span class="btn btn-white btn-file">
+										<span class="fileinput-new">Select image</span>
+										<span class="fileinput-exists">Change</span>
+										<input type="file" name="userfile" accept="image/*">
+									</span>
+									<a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Remove</a>
+								</div>
+							</div>
+						</div>
+					</div> -->
 						<div class="form-group">
 							<a href="" class="btn btn-warning">Batal</a>
 							<button type="submit" name="simpan" class="btn btn-success">Simpan</button>
