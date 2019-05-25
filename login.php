@@ -2,6 +2,8 @@
 require 'config/database.php';
 require 'function/init.php';
 
+
+
 ?>
 
 <!DOCTYPE html>

@@ -16,9 +16,10 @@ if(isset($_POST['login'])){
 		if(password_verify($pass, $data['password'])){
 			// set session
 			$_SESSION['admin'] = $data;
-			print_r($_SESSION);
-			echo "<br>";
-			echo "<a href='logout.php'>logout</a>";
+			// print_r($_SESSION);
+			// echo "<br>";
+			// echo "<a href='logout.php'>logout</a>";
+			header('Location: index.php');
 			exit();
 		}
 	}
