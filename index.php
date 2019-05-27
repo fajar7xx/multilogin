@@ -49,6 +49,10 @@ if(!isset($_SESSION['admin'])){
   <!-- Custom styles for this template-->
   <link href="<?=base_url('node_modules/startbootstrap-sb-admin-2/');?>css/sb-admin-2.css" rel="stylesheet">
 
+
+
+
+
 </head>
 
 <body id="page-top">
@@ -365,7 +369,6 @@ if(!isset($_SESSION['admin'])){
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
           </div>
 
           <div class="row">
@@ -389,34 +392,23 @@ if(!isset($_SESSION['admin'])){
                     </div>
                   </div>
                 </div>
+
                 <!-- Card Body -->
                 <div class="card-body">
-					<form action="" method="post" enctype="multipart/form-data">
+                	<!-- <div id="error"></div> -->
+					<form action="upload.php" method="post" enctype="multipart/form-data">
 						<div class="form-group">
-							<label for="image">Image Upload</label>
-							<input type="file" name="image" class="form-control-file">
+							<label for="alt">Nama File</label>
+							<input type="text" name="alt" id="alt" class="form-control">
 						</div>
 						
-<!-- 					<div class="form-group">
-						<label for="field-1" class="col-sm-3 control-label">Photo</label>
+						<img src="img/untiled.png" class="img-fluid img-thumbnail" id="image1" style="height: 200px; width: auto;">
 
-						<div class="col-sm-5">
-							<div class="fileinput fileinput-new" data-provides="fileinput">
-								<div class="fileinput-new thumbnail" style="width: 100px; height: 100px;" data-trigger="fileinput">
-									<img src="http://placehold.it/200x200" alt="...">
-								</div>
-								<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>
-								<div>
-									<span class="btn btn-white btn-file">
-										<span class="fileinput-new">Select image</span>
-										<span class="fileinput-exists">Change</span>
-										<input type="file" name="userfile" accept="image/*">
-									</span>
-									<a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Remove</a>
-								</div>
-							</div>
+						<div class="form-group">
+							<input type="file" name="image" id="image" class="form-control-file" onchange="showImage.call(this)" accept="image/*">
 						</div>
-					</div> -->
+						
+
 						<div class="form-group">
 							<a href="" class="btn btn-warning">Batal</a>
 							<button type="submit" name="simpan" class="btn btn-success">Simpan</button>
@@ -486,14 +478,22 @@ if(!isset($_SESSION['admin'])){
   <!-- Custom scripts for all pages-->
   <script src="<?=base_url('node_modules/startbootstrap-sb-admin-2/');?>js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <!-- <script src="<?=base_url('node_modules/startbootstrap-sb-admin-2/');?>vendor/chart.js/Chart.min.js"></script> -->
+  <!-- script uploader preview -->
+  <script type="text/javascript">
+  	function showImage(){
+  		if(this.files && this.files[0]){
+  			var obj = new FileReader();
+  			obj.onload = function(data){
+  				var image = document.getElementById("image1");
+  				image.src = data.target.result;
+  				// image.style.display = "block";
+  			}
+  			obj.readAsDataURL(this.files[0]);
+  		}
+  	}
+  </script>
 
-  <!-- Page level custom scripts -->
-<!--   <script src="<?=base_url('node_modules/startbootstrap-sb-admin-2/');?>js/demo/chart-area-demo.js"></script>
-  <script src="<?=base_url('node_modules/startbootstrap-sb-admin-2/');?>js/demo/chart-pie-demo.js"></script> -->
 
-  <!-- <script src="<?php echo base_url('assets/js/fileinput.js');?>"></script> -->
 
 </body>
 
